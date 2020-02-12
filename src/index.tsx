@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { ChatProvider } from "./hooks/context";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Provider = () => (
+  <ChatProvider>
+    <App />
+  </ChatProvider>
+);
+
+ReactDOM.render(<Provider />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
